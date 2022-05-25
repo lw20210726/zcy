@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+//    this->setStyleSheet("QMaindWindow {background:url(:img/bj.png)}");
+    setFixedSize(1700,900);
     //    cmd2 = new QProcess(this);
     process = new QProcess ;
     cmd = new QProcess(this);

@@ -1,7 +1,10 @@
 #include "mainwindow.h"
 
 #include <QApplication>
-
+#include <QStringList>
+#include <QProcess>
+#include <iostream>
+using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

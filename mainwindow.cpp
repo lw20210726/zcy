@@ -7,6 +7,11 @@
 #include <QList>
 #include <QTimer>
 #include <QProcessEnvironment>
+#include <modifyconf.h>
+#include <QProxyStyle>
+#include <QStyleOptionTab>
+#include <tabbarstyle.h>
+#include <QTabBar>
 #define PATH_MAX_LEN 256
 
 MainWindow::MainWindow(QWidget *parent)
@@ -15,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 //    this->setStyleSheet("QMaindWindow {background:url(:img/bj.png)}");
-    setFixedSize(1700,900);
+    setFixedSize(1700,1000);
     //    cmd2 = new QProcess(this);
     process = new QProcess ;
     cmd = new QProcess(this);
@@ -32,6 +37,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timerEnb,SIGNAL(timeout()),this,SLOT(ZqzxSrsenb()));
     timerEnb->start(2000);
 
+    ui->tabWidget->tabBar()->setStyle(new TabBarStyle(Qt::Horizontal));
+    ui->tabWidget->setTabText(0,"系统运行");
+    ui->tabWidget->setTabText(1,"系统配置");
+    ui->tabWidget->setTabText(2,"系统配置");
 }
 
 MainWindow::~MainWindow()
@@ -39,9 +48,6 @@ MainWindow::~MainWindow()
     qDebug()<<"exit system!";
 }
 
-void MainWindow::closeEvent(QCloseEvent *event){
-    this->close();
-}
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -61,43 +67,6 @@ void MainWindow::on_pushButton_3_clicked()
         system("gnome-terminal -- bash -c 'echo 123456 | sudo -S sudo srsenb'&");
 }
 
-void MainWindow::on_pushButton_4_clicked()
-{
-
-    QProcess p(0); //进程会很快crash掉
-    p.start("bash");
-    p.waitForStarted();
-    p.write("echo 123456 | sudo -S sudo srsenb\n");
-   p.closeWriteChannel();
-    p.waitForFinished();
-    qDebug()<<QString::fromLocal8Bit(p.readAllStandardOutput());
-    qDebug()<<QProcess::NotRunning<<"Not running";
-    qDebug()<<QProcess::Starting<<"starting";
-    qDebug()<<QProcess::Running<<"Running";
-    if(p.state()==QProcess::Starting)
-    {
-        setLED(ui->label_3,0,16);
-    }
-    if(p.state()==QProcess::Running)
-    {
-        setLED(ui->label_3,2,16);
-    }
-    if(p.state()==QProcess::NotRunning){
-        setLED(ui->label_3,1,16);
-    }
-
-    else{
-        setLED(ui->label_3,3,16);
-    }
-
-     if(p.state()==QProcess::FailedToStart){
-         qDebug()<<"进程启动失败";
-}
-     if(p.state()==QProcess::Crashed){
-         qDebug()<<"进程启动后崩溃";
-}
-
-}
 
 void MainWindow::on_pushButton_5_clicked()
 {
@@ -421,6 +390,17 @@ void MainWindow::ZqzxSrsenb(){
 // } while(Process32Next(hSnapShot, &pInfo) );
 // return result;
 //}
+
+
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    peizhi = new ModifyConf();
+
+    peizhi->show();
+
+}
 
 
 

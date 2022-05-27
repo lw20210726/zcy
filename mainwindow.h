@@ -1,11 +1,18 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 #include <QProcess>
 #include <QObject>
 #include <QDebug>
 #include <qlabel.h>
+#include <modifyconf.h>
+#include <QProxyStyle>
+#include <QStyleOptionTab>
+#include <QStyle>
+#include <QStylePainter>
+#include <QTabBar>
+#include<iostream>
+#include <QApplication>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,9 +32,6 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-    void on_pushButton_4_clicked();
-
-
     void on_pushButton_5_clicked();
     void on_readoutput();
 //    void on_readerror();
@@ -39,12 +43,12 @@ private slots:
     void on_pushButton_8_clicked();
     void setLED(QLabel* label, int color, int size);
     void on_pushButton_9_clicked();
-    void closeEvent(QCloseEvent *event);
 
     void ZqzxSrsepc();
     void ZqzxSrsenb();
 
 
+    void on_pushButton_4_clicked();
 private:
     Ui::MainWindow *ui;
     QProcess *process;
@@ -55,5 +59,8 @@ private:
     bool IsProcessExist(const QString &processName);
     bool checkProcessRunnin(const QString &srsenb);
     bool KillProcess(const QString &ProcessName);
+
+    ModifyConf *peizhi;
+
  };
 #endif // MAINWINDOW_H

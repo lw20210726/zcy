@@ -7,7 +7,7 @@
 #include <QList>
 #include <QTimer>
 #include <QProcessEnvironment>
-#include <modifyconf.h>
+
 #include <QProxyStyle>
 #include <QStyleOptionTab>
 #include <tabbarstyle.h>
@@ -57,23 +57,6 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
-{
-    //    system("gnome-terminal -- bash -c 'echo 123456 | sudo -S sudo srsenb'dist &");  /*//chmod a+x /home/xx/my.sh;*/
-    //    system("gnome-terminal -- bash -c 'echo 123456 | sudo -S sudo srsenb'&");  /*//chmod a+x /home/xx/my.sh;*/
-    system("ps | grep srsenb |grep -v grep || echo 123456 | sudo -S sudo srsenb &");
-
-}
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    system("gnome-terminal -- bash -c 'echo 123456 | sudo -S sudo srsepc'&");
-}
-
-void MainWindow::on_pushButton_3_clicked()
-{
-        system("gnome-terminal -- bash -c 'echo 123456 | sudo -S sudo srsenb'&");
-}
 
 
 void MainWindow::on_pushButton_5_clicked()
@@ -402,13 +385,6 @@ void MainWindow::ZqzxSrsenb(){
 
 
 
-void MainWindow::on_pushButton_4_clicked()
-{
-    peizhi = new ModifyConf();
-
-    peizhi->show();
-
-}
 
 
 

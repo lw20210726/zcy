@@ -12,17 +12,14 @@ CONFIG += console
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    modifyconf.cpp \
     tabbarstyle.cpp
 
 HEADERS += \
     mainwindow.h \
-    modifyconf.h \
     tabbarstyle.h
 
 FORMS += \
-    mainwindow.ui \
-    modifyconf.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

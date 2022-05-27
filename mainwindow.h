@@ -5,7 +5,6 @@
 #include <QObject>
 #include <QDebug>
 #include <qlabel.h>
-#include <modifyconf.h>
 #include <QProxyStyle>
 #include <QStyleOptionTab>
 #include <QStyle>
@@ -26,12 +25,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_3_clicked();
-
     void on_pushButton_5_clicked();
     void on_readoutput();
 //    void on_readerror();
@@ -48,7 +41,7 @@ private slots:
     void ZqzxSrsenb();
 
 
-    void on_pushButton_4_clicked();
+
     void on_pushButton_10_clicked();
 
     void on_pushButton_11_clicked();
@@ -68,7 +61,6 @@ private:
     bool checkProcessRunnin(const QString &srsenb);
     bool KillProcess(const QString &ProcessName);
 
-    ModifyConf *peizhi;
 
  };
 #endif // MAINWINDOW_H

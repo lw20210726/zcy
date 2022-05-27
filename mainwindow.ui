@@ -28,78 +28,13 @@ background-color: rgb(114, 159, 207);
    <property name="styleSheet">
     <string notr="true">color: rgb(143, 89, 2);</string>
    </property>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>200</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>start eNB</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>start CN</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>400</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>配置</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>440</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>300</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>star eNB</string>
-    </property>
-   </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>20</y>
-      <width>1500</width>
-      <height>931</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1700</width>
+      <height>990</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -109,7 +44,7 @@ background-color: rgb(114, 159, 207);
      <enum>QTabWidget::West</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="tabBarAutoHide">
      <bool>false</bool>
@@ -123,7 +58,7 @@ background-color: rgb(114, 159, 207);
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>1351</width>
+        <width>1400</width>
         <height>931</height>
        </rect>
       </property>
@@ -146,7 +81,7 @@ background-color: rgb(114, 159, 207);
           <x>130</x>
           <y>0</y>
           <width>1180</width>
-          <height>920</height>
+          <height>900</height>
          </rect>
         </property>
         <property name="maximumSize">
@@ -220,7 +155,7 @@ font: 20pt &quot;Ubuntu&quot;;</string>
           <x>130</x>
           <y>0</y>
           <width>1180</width>
-          <height>920</height>
+          <height>900</height>
          </rect>
         </property>
         <property name="maximumSize">
@@ -271,7 +206,7 @@ font: 20pt &quot;Ubuntu&quot;;</string>
           <x>130</x>
           <y>0</y>
           <width>1180</width>
-          <height>920</height>
+          <height>900</height>
          </rect>
         </property>
         <property name="maximumSize">
@@ -287,7 +222,7 @@ font: 20pt &quot;Ubuntu&quot;;</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>10</y>
         <width>80</width>
         <height>30</height>
        </rect>
@@ -300,7 +235,7 @@ font: 20pt &quot;Ubuntu&quot;;</string>
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>20</y>
+        <y>10</y>
         <width>80</width>
         <height>30</height>
        </rect>
@@ -312,14 +247,66 @@ font: 20pt &quot;Ubuntu&quot;;</string>
      <widget class="QPushButton" name="pushButton_9">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>20</y>
+        <x>250</x>
+        <y>10</y>
         <width>80</width>
         <height>25</height>
        </rect>
       </property>
       <property name="text">
+       <string>蓝牙</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>10</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
        <string>IMS</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>1669</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>10</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>WIFI</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>10</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ZIGBEE</string>
       </property>
      </widget>
     </widget>
@@ -330,64 +317,91 @@ font: 20pt &quot;Ubuntu&quot;;</string>
      <widget class="QTextEdit" name="textEdit_4">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>129</x>
         <y>0</y>
-        <width>1300</width>
-        <height>927</height>
+        <width>1271</width>
+        <height>950</height>
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_10">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>89</width>
-        <height>25</height>
+        <width>115</width>
+        <height>158</height>
        </rect>
       </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>89</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_12">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>89</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_13">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>130</y>
-        <width>89</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton_10">
+         <property name="text">
+          <string>查看核心网配置</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_11">
+         <property name="text">
+          <string>修改核心网配置</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_12">
+         <property name="text">
+          <string>查看基站配置</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_13">
+         <property name="text">
+          <string>修改基站配置</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">

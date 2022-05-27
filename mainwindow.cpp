@@ -12,6 +12,14 @@
 #include <QStyleOptionTab>
 #include <tabbarstyle.h>
 #include <QTabBar>
+
+
+#include <QDir>
+#include <QFile>
+
+#include <QFileDialog>
+#include <QAction>
+
 #define PATH_MAX_LEN 256
 
 MainWindow::MainWindow(QWidget *parent)
@@ -40,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->tabBar()->setStyle(new TabBarStyle(Qt::Horizontal));
     ui->tabWidget->setTabText(0,"系统运行");
     ui->tabWidget->setTabText(1,"系统配置");
-    ui->tabWidget->setTabText(2,"系统配置");
+    ui->tabWidget->setTabText(2,"系统监控");
 }
 
 MainWindow::~MainWindow()
@@ -402,5 +410,114 @@ void MainWindow::on_pushButton_4_clicked()
 
 }
 
+
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    QString filename("/etc/srsran/epc.conf");
+    QFile file(filename);
+    QTextStream stream(&file);
+    stream.setCodec("UTF-8");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QString s; //用于接受数据
+//        m_textEdit = new QTextEdit(this);
+//        m_textEdit->setReadOnly(true);  //将文本设置为只读
+        while(!stream.atEnd()){
+           s+=stream.readLine();
+           s+="\n";
+        }
+        ui->textEdit_4->setText(s);        //将数据显示到文本框中
+//        m_layout->addWidget(m_textEdit,0,0);
+        //参数:子窗口,横坐标,纵坐标.
+        //如果没有上面这条语句,那么显示只会在一个小框框里
+        file.close();
+    }else{
+       QMessageBox::information(this,"提示","文件打开失败！");
+    }
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setText("提示");
+    msgBox.setInformativeText("确实要保存核心网配置吗?");
+    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Ok);
+    int ret = msgBox.exec();
+    if(ret == QMessageBox::Ok){
+
+    //      QString filename = QFileDialog::getSaveFileName(this, " 另存为 " , "/etc/srsran/epc.conf","*.conf" );
+        QString filename("/etc/srsran/epc.conf");
+        QFile file(filename);//创建文件对象
+        bool tag = file.open(QIODevice::WriteOnly);//写内容到文件中
+        if(!tag)
+        {
+            return;
+        }
+        QString text = ui->textEdit_4->toPlainText();//文本框中的内容
+        file.write(text.toUtf8());//将text内容转化为字节数组
+
+        file.close();
+        QMessageBox::information(this,"提示","文件保存成功！");
+    }    else{
+            return;
+        }
+
+
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    QString filename("/etc/srsran/enb.conf");
+    QFile file(filename);
+    QTextStream stream(&file);
+    stream.setCodec("UTF-8");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QString s; //用于接受数据
+//        m_textEdit = new QTextEdit(this);
+//        m_textEdit->setReadOnly(true);  //将文本设置为只读
+        while(!stream.atEnd()){
+           s+=stream.readLine();
+           s+="\n";
+        }
+        ui->textEdit_4->setText(s);        //将数据显示到文本框中
+//        m_layout->addWidget(m_textEdit,0,0);
+        //参数:子窗口,横坐标,纵坐标.
+        //如果没有上面这条语句,那么显示只会在一个小框框里
+        file.close();
+    }
+    else{
+       QMessageBox::information(this,"提示","文件打开失败！");
+    }
+}
+void MainWindow::on_pushButton_13_clicked()
+{
+
+    // QString filename = QFileDialog::getSaveFileName(this, " 另存为 " , "/root/.config/srsran/enb.conf","*.conf" );
+
+    QMessageBox msgBox;
+    msgBox.setText("提示");
+    msgBox.setInformativeText("确实要保存基站配置吗?");
+    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Ok);
+    int ret = msgBox.exec();
+    if(ret == QMessageBox::Ok){
+        QString filename("/etc/srsran/enb.conf");
+        QFile file(filename);//创建文件对象
+        bool tag = file.open(QIODevice::WriteOnly);//写内容到文件中
+        if(!tag)
+        {
+            return;
+        }
+        QString text = ui->textEdit_4->toPlainText();//文本框中的内容
+        file.write(text.toUtf8());//将text内容转化为字节数组
+        file.close();
+        QMessageBox::information(this,"提示","文件保存成功！");
+    }
+    else{
+        return;
+    }
+
+}
 
 

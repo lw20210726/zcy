@@ -497,3 +497,82 @@ void MainWindow::on_pushButton_13_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    //获取基站配置
+
+
+        QString strAll;
+        QStringList strList;
+        QFile readFile("/etc/srsran/enb.conf");		//PATH是自定义读取文件的地址
+        if(readFile.open((QIODevice::ReadOnly|QIODevice::Text)))
+        {
+            //把文件所有信息读出来
+            QTextStream stream(&readFile);
+            strAll=stream.readAll();
+            strList=strAll.split("\n");           //以换行符为基准分割文本
+            QString tempStr=strList.at(22).right(3);
+            ui->lineEdit->setText(tempStr);//文本框中的内容
+            QString mnc=strList.at(23).right(3);
+            ui->lineEdit_2->setText(mnc);//文本框中的内容
+            QString dl_earfcn=strList.at(65).right(5);
+            ui->lineEdit_3->setText(dl_earfcn);//文本框中的内容
+                        QString rb=strList.at(28).right(3);
+            ui->lineEdit_4->setText(rb);//文本框中的内容
+
+        }
+
+        else{
+
+            readFile.close();
+        }
+
+
+}
+
+
+void MainWindow::on_pushButton_14_clicked()
+{
+    //保存基站配置
+    //读取文本
+    QFile file("/etc/srsran/enb.conf");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString strAll;
+    QString strLine;
+    while (!file.atEnd())
+    {
+        strLine = file.readLine();
+        //找到包含"lockTime="的行，并使用replace加上QRegExp替换成从QLineEdit输入的字串
+        if(strLine.contains("mcc = "))
+        {
+            strLine.replace(QRegExp("mcc = .*"),QString("mcc = ")+ui->lineEdit->text()+"\n");
+        }
+        if(strLine.contains("mnc = "))
+        {
+            strLine.replace(QRegExp("mnc = .*"),QString("mnc = ")+ui->lineEdit_2->text()+"\n");
+        }
+        if(strLine.contains("dl_earfcn ="))
+        {
+            strLine.replace(QRegExp("dl_earfcn = .*"),QString("dl_earfcn =  ")+ui->lineEdit_3->text()+"\n");
+        }
+
+                if(strLine.contains("n_prb = "))
+        {
+            strLine.replace(QRegExp("n_prb = .*"),QString("n_prb = ")+ui->lineEdit_4->text()+"\n");
+        }
+
+        strAll = strAll+ strLine;
+    }
+
+
+
+    file.close();
+    //写入文本
+    file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate);
+    file.write(strAll.toLatin1());
+    file.close();
+
+
+}
+

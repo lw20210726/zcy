@@ -31,8 +31,8 @@ background-color: rgb(114, 159, 207);
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <width>1700</width>
       <height>990</height>
      </rect>
@@ -44,7 +44,7 @@ background-color: rgb(114, 159, 207);
      <enum>QTabWidget::West</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="tabBarAutoHide">
      <bool>false</bool>
@@ -317,19 +317,19 @@ font: 20pt &quot;Ubuntu&quot;;</string>
      <widget class="QTextEdit" name="textEdit_4">
       <property name="geometry">
        <rect>
-        <x>129</x>
+        <x>159</x>
         <y>0</y>
-        <width>1271</width>
+        <width>1241</width>
         <height>950</height>
        </rect>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>115</width>
+        <width>145</width>
         <height>158</height>
        </rect>
       </property>
@@ -337,7 +337,7 @@ font: 20pt &quot;Ubuntu&quot;;</string>
        <item>
         <widget class="QPushButton" name="pushButton_10">
          <property name="text">
-          <string>查看核心网配置</string>
+          <string>查看核心网所有配置</string>
          </property>
         </widget>
        </item>
@@ -377,7 +377,7 @@ font: 20pt &quot;Ubuntu&quot;;</string>
        <item>
         <widget class="QPushButton" name="pushButton_12">
          <property name="text">
-          <string>查看基站配置</string>
+          <string>查看基站所有配置</string>
          </property>
         </widget>
        </item>
@@ -402,6 +402,124 @@ font: 20pt &quot;Ubuntu&quot;;</string>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>72</x>
+        <y>220</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>220</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>MCC</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>250</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>-2</x>
+        <y>250</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>MNC</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>290</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>-2</x>
+        <y>290</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>频点</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>320</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>-2</x>
+        <y>320</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>带宽</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>获取基站配置</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_14">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>370</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>保存基站配置</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
